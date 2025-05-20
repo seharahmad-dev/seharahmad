@@ -62,7 +62,7 @@ export default function Hero() {
               </h1>
 
               <div className="text-xl md:text-3xl font-medium mb-8 flex items-center">
-                <span className="mr-2">I'm a</span>
+                <span className="mr-2">I&apos;m a</span>
                 <RotatingText
                   texts={["Full-Stack Developer", "UI/UX Designer", "Programmer", "Tech Enthusiast"]}
                   className="text-purple-500 dark:text-purple-400 font-bold"

@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react"
 import { motion, useAnimation } from "framer-motion"
 import { FadeIn } from "@/components/animations/scroll-animation"
 import { useInView } from "react-intersection-observer"
+import Image from "next/image"
 
 const technologies = [
   { name: "C++", icon: "/img/cpp.png", url: "https://isocpp.org/std/the-standard" },
@@ -29,11 +30,19 @@ const technologies = [
 
 export default function TechStack() {
   const tickerRef = useRef<HTMLDivElement>(null)
-  const [ref, inView] = useInView({
+  const { ref: inViewRef, inView } = useInView({
     triggerOnce: false,
     threshold: 0.1,
   })
   const controls = useAnimation()
+
+  // Combine refs for the element that needs both refs
+  const setRefs = (element: HTMLDivElement) => {
+    // Set the tickerRef
+    tickerRef.current = element
+    // Set the inViewRef
+    inViewRef(element)
+  }
 
   useEffect(() => {
     if (inView) {
@@ -44,7 +53,7 @@ export default function TechStack() {
   return (
     <section id="skills" className="py-16 md:py-24 bg-slate-900 text-white">
       <div className="container mx-auto px-4">
-        <div className="overflow-hidden py-8" ref={tickerRef}>
+        <div className="overflow-hidden py-8" ref={setRefs}>
           <FadeIn>
             <h3 className="text-2xl md:text-3xl font-bold text-center mb-16">Technologies I Am Familiar With</h3>
           </FadeIn>
@@ -63,7 +72,15 @@ export default function TechStack() {
                     rel="noopener noreferrer"
                     className="flex flex-col items-center group"
                   >
-                    <img src={tech.icon || "/placeholder.svg"} alt={tech.name} className="w-14 h-14 object-contain mb-3" />
+                    <div className="relative w-14 h-14 mb-3">
+                      <Image 
+                        src={tech.icon || "/placeholder.svg"} 
+                        alt={tech.name} 
+                        fill
+                        className="object-contain" 
+                        sizes="56px"
+                      />
+                    </div>
                     <span className="mt-4 text-sm font-medium transition-opacity opacity-0 group-hover:opacity-100">{tech.name}</span>
                   </a>
                 </motion.div>

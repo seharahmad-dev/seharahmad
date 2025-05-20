@@ -2,8 +2,9 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Github, ExternalLink, ChevronLeft, ChevronRight, Image } from "lucide-react"
+import { Github, ExternalLink, ChevronLeft, ChevronRight, Image as ImageIcon } from "lucide-react"
 import { FadeIn, ScaleIn } from "@/components/animations/scroll-animation"
+import Image from "next/image"
 
 interface Project {
   id: number;
@@ -121,6 +122,7 @@ export default function Projects() {
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/40 transition-colors"
+            aria-label="View GitHub repository"
           >
             <Github className="h-5 w-5 text-white" />
           </a>
@@ -129,8 +131,9 @@ export default function Projects() {
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/40 transition-colors"
+            aria-label="View full image"
           >
-            <Image className="h-5 w-5 text-white" />
+            <ImageIcon className="h-5 w-5 text-white" />
           </a>
         </div>
       )
@@ -143,8 +146,9 @@ export default function Projects() {
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/40 transition-colors"
+            aria-label="View full image"
           >
-            <Image className="h-5 w-5 text-white" />
+            <ImageIcon className="h-5 w-5 text-white" />
           </a>
         </div>
       )
@@ -157,6 +161,7 @@ export default function Projects() {
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/40 transition-colors"
+            aria-label="View GitHub repository"
           >
             <Github className="h-5 w-5 text-white" />
           </a>
@@ -165,6 +170,7 @@ export default function Projects() {
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/40 transition-colors"
+            aria-label="View live demo"
           >
             <ExternalLink className="h-5 w-5 text-white" />
           </a>
@@ -193,7 +199,7 @@ export default function Projects() {
             rel="noopener noreferrer"
             className="flex items-center px-4 py-2 bg-purple-600 rounded-lg hover:bg-purple-700 transition-colors text-white"
           >
-            <Image className="h-5 w-5 mr-2" />
+            <ImageIcon className="h-5 w-5 mr-2" />
             View Image
           </a>
         </div>
@@ -208,7 +214,7 @@ export default function Projects() {
             rel="noopener noreferrer"
             className="flex items-center px-4 py-2 bg-purple-600 rounded-lg hover:bg-purple-700 transition-colors text-white"
           >
-            <Image className="h-5 w-5 mr-2" />
+            <ImageIcon className="h-5 w-5 mr-2" />
             View Image
           </a>
         </div>
@@ -256,11 +262,13 @@ export default function Projects() {
                 whileHover={{ y: -10 }}
                 className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg group"
               >
-                <div className="relative overflow-hidden">
-                  <img
+                <div className="relative overflow-hidden h-48">
+                  <Image
                     src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                    alt={`${project.title} project thumbnail`}
+                    className="transition-transform duration-500 group-hover:scale-110 object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <div className="p-4 w-full">
@@ -293,6 +301,7 @@ export default function Projects() {
               <button
                 onClick={prevProject}
                 className="p-2 rounded-full bg-white/80 dark:bg-gray-800/80 shadow-lg hover:bg-white dark:hover:bg-gray-700 transition-colors"
+                aria-label="Previous project"
               >
                 <ChevronLeft className="h-6 w-6" />
               </button>
@@ -306,12 +315,15 @@ export default function Projects() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="relative"
+                  className="relative h-[300px] md:h-[400px]"
                 >
-                  <img
+                  <Image
                     src={carouselProjects[currentIndex].image || "/placeholder.svg"}
-                    alt={carouselProjects[currentIndex].title}
-                    className="w-full h-[300px] md:h-[400px] object-cover"
+                    alt={`${carouselProjects[currentIndex].title} project showcase`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 800px"
+                    priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 md:p-8">
                     <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">{carouselProjects[currentIndex].title}</h3>
@@ -336,6 +348,7 @@ export default function Projects() {
               <button
                 onClick={nextProject}
                 className="p-2 rounded-full bg-white/80 dark:bg-gray-800/80 shadow-lg hover:bg-white dark:hover:bg-gray-700 transition-colors"
+                aria-label="Next project"
               >
                 <ChevronRight className="h-6 w-6" />
               </button>

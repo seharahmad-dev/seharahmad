@@ -33,7 +33,7 @@ export default function About() {
                   A full-stack web developer with a love for crafting clean, accessible, and meaningful digital experiences. With a background in Information Science and a strong foundation in C++, Java, and modern web technologies, I enjoy building applications that are not only functional but also beautiful and user-centric.
                 </p>
                 <p className="text-gray-600 dark:text-gray-300">
-                  I care deeply about bridging the gap between good design and solid engineering. Whether it's developing scalable platforms, experimenting with new frameworks, or optimizing user flows, I'm always looking to create something that makes an impact.
+                  I care deeply about bridging the gap between good design and solid engineering. Whether it&apos;s developing scalable platforms, experimenting with new frameworks, or optimizing user flows, I&apos;m always looking to create something that makes an impact.
                 </p>
               </div>
             </div>

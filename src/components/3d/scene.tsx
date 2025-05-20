@@ -3,11 +3,19 @@
 import { useRef } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { OrbitControls, Text, Float } from "@react-three/drei"
+import { Mesh } from "three"
 
-function Box(props: any) {
-  const ref = useRef<any>(null)
+interface BoxProps {
+  position: [number, number, number]
+  color?: string
+  scale?: number
+}
+
+function Box(props: BoxProps) {
+  const ref = useRef<Mesh>(null)
 
   useFrame((state) => {
+    if (!ref.current) return
     const t = state.clock.getElapsedTime()
     ref.current.rotation.x = Math.sin(t / 2) / 4
     ref.current.rotation.y = Math.sin(t / 4) / 4
@@ -22,7 +30,17 @@ function Box(props: any) {
   )
 }
 
-function FloatingText({ children, position, rotation, ...props }: any) {
+interface FloatingTextProps {
+  children: React.ReactNode
+  position: [number, number, number]
+  rotation?: [number, number, number]
+  fontSize?: number
+  color?: string
+  maxWidth?: number
+  textAlign?: "center" | "left" | "right"
+}
+
+function FloatingText({ children, position, rotation, ...props }: FloatingTextProps) {
   return (
     <Float speed={4} rotationIntensity={0.5} floatIntensity={2}>
       <Text
