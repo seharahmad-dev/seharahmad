@@ -44,8 +44,8 @@ export default function About() {
               {[
                 { label: "Name", value: "Sehar Ahmad" },
                 { 
-                  label: "Email", 
-                  value: "seharahmad.dev@gmail.com",
+                  label: "Gmail", 
+                  value: "seharahmad.dev",
                   link: "mailto:seharahmad.dev@gmail.com"
                 },
                 { 
