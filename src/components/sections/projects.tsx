@@ -18,23 +18,23 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: 1,
+    id: 2,
     title: "Car Price Prediction",
     description:
       "Developed a web-based platform for real-time used car price prediction using advanced machine learning models, enabling users to make data-driven decisions in the second-hand car market.",
     image: "/project/carprice.jpg",
     technologies: ["Next.js", "Flask", "Tailwind CSS", "Machine Learning"],
-    github: "https://github.com/gitgeek-glitch/carpp.git",
+    github: "https://github.com/seharahmad-dev/carpp.git",
     demo: "https://carpriceprediction-sandy.vercel.app/",
   },
   {
-    id: 2,
+    id: 1,
     title: "AskItOut",
     description: "A student-driven Q&A platform for sharing knowledge, solving doubts, and connecting minds across campus. Empowering students to learn from each other, one question at a time. Ask anything, answer everything.",
     image: "/project/askitout.jpg",
     technologies: ["React", "Node", "MongoDB", "Gemini Integration"],
-    github: "https://github.com/gitgeek-glitch/doubtplatform.git",
-    demo: "/building",
+    github: "https://github.com/seharahmad-dev/doubtplatform.git",
+    demo: "https://collegequora.vercel.app/",
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ const projects: Project[] = [
       "The Tiny Encryption Algorithm (TEA) is a lightweight yet powerful block cipher known for its simplicity and speed. Integrated into the site for hands-on exploration of modern cryptographic principles.",
     image: "/project/tea.jpg",
     technologies: ["Next", "Encryption", "Block Cipher", "Cryptography"],
-    github: "https://github.com/gitgeek-glitch/tea-algorithm.git",
+    github: "https://github.com/seharahmad-dev/tea-algorithm.git",
     demo: "https://tea-algorithm.vercel.app/",
   },
   {
@@ -53,7 +53,7 @@ const projects: Project[] = [
       "A full-stack educational platform designed to teach users about various battery technologies through interactive visualizations, comparisons, timelines, and quizzes.",
     image: "/project/battery.jpg",
     technologies: ["Next", "Tailwind CSS", "Gemini Integration"],
-    github: "https://github.com/gitgeek-glitch/batterytech.git",
+    github: "https://github.com/seharahmad-dev/batterytech.git",
     demo: "https://batterytech.vercel.app/",
   },
   {
@@ -63,7 +63,7 @@ const projects: Project[] = [
       "A collaborative platform where leaders can create teams and invite members to join. Team members can work together on shared projects with real-time updates and seamless coordination.",
     image: "/project/team.jpg",
     technologies: ["React", "Tailwind CSS", "Node", "MongoDB", "Socket.io"],
-    github: "https://github.com/gitgeek-glitch/teamcollab.git",
+    github: "https://github.com/seharahmad-dev/teamcollab.git",
     demo: "/building",
   },
   {
@@ -73,7 +73,7 @@ const projects: Project[] = [
       "A bioinformatics web application that allows users to explore evolutionary relationships by selecting gene IDs and generating phylogenetic trees. It fetches real-time DNA sequences from NCBI.",
     image: "/project/phlo.jpg",
     technologies: ["Next", "Python", "Biopython", "NCBI Entrez API"],
-    github: "https://github.com/gitgeek-glitch/phylogenetic.git",
+    github: "https://github.com/seharahmad-dev/phylogenetic.git",
     demo: "https://phylogenetic.vercel.app/",
   },
   {
@@ -83,7 +83,7 @@ const projects: Project[] = [
       "Built a custom UNIX Shell in C, extending core functionalities to deepen UNIX environment system programming expertise.",
     image: "/project/project-img2.jpg",
     technologies: ["C", "Unix", "Shell Scripting", "System Programming"],
-    github: "https://github.com/gitgeek-glitch/phylogenetic.git",
+    github: "https://github.com/seharahmad-dev/phylogenetic.git",
     demo: "https://phylogenetic.vercel.app/",
   },
   {
@@ -93,13 +93,13 @@ const projects: Project[] = [
       "An AI-powered email writer that generates professional and personalized emails using GPT-2 integration.",
     image: "/project/project-img3.png",
     technologies: ["Python", "GPT-2 model (via Hugging Face Transformers)"],
-    github: "https://github.com/gitgeek-glitch/phylogenetic.git",
+    github: "https://github.com/seharahmad-dev/phylogenetic.git",
     demo: "https://phylogenetic.vercel.app/",
   },
 ]
 
 // Filter projects for the carousel (only IDs 1, 3, 4, 6)
-const carouselProjects = projects.filter(project => [1, 3, 4, 6].includes(project.id))
+const carouselProjects = projects.filter(project => [1, 2, 3, 4, 6].includes(project.id))
 
 export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0)
