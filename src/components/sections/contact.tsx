@@ -69,7 +69,7 @@ export default function Contact() {
 
   const socialLinks = [
     { name: "GitHub", icon: <Github />, url: "https://github.com/seharahmad-dev" },
-    { name: "LinkedIn", icon: <Linkedin />, url: "https://www.linkedin.com/in/seharahmad" },
+    // { name: "LinkedIn", icon: <Linkedin />, url: "https://www.linkedin.com/in/seharahmad" },
     { name: "CodeForces", icon: <Code />, url: "https://leetcode.com/u/nullp0interr/" },
     { name: "CodeChef", icon: <Award />, url: "https://www.codechef.com/users/nullp0inter" },
     { name: "Email", icon: <Mail />, url: "mailto:seharahmad.dev@gmail.com" },
