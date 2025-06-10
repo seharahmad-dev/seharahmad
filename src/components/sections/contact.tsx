@@ -3,7 +3,8 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { FadeIn, SlideIn } from "@/components/animations/scroll-animation"
-import { Github, Linkedin, Mail, Send, Code, Award } from "lucide-react"
+import { Github, Mail, Send, Code, Award } from "lucide-react"
+// import { Linkedin } from "lucide-react"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
