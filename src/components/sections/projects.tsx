@@ -29,7 +29,7 @@ const projects: Project[] = [
   },
   {
     id: 1,
-    title: "AskItOut",
+    title: "CollegeQuora",
     description: "A student-driven Q&A platform for sharing knowledge, solving doubts, and connecting minds across campus. Empowering students to learn from each other, one question at a time. Ask anything, answer everything.",
     image: "/project/askitout.jpg",
     technologies: ["React", "Node", "MongoDB", "Gemini Integration"],
