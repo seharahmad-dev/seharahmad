@@ -54,9 +54,12 @@ export default function About() {
                   link: "https://www.google.com/maps/place/Bengaluru,+Karnataka,+India"
                 },
                 { 
-                  label: "College", 
-                  value: "BMS College of Engineering",
-                  link: "https://www.bmsce.ac.in/"
+                  // label: "College", 
+                  // value: "BMS College of Engineering",
+                  // link: "https://www.bmsce.ac.in/"
+                  label: "Phone",
+                  value: "+91 73499 05111",
+                  link: "tel:+917349905111"
                 },
                 { label: "Degree", value: "B.E. Information Science and Engineering" },
                 { label: "CGPA", value: "9.57" },
