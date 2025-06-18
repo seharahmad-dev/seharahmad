@@ -32,7 +32,7 @@ const certifications = [
   {
     id: 4,
     title: "Big Data Ingestion",
-    issuer: "Phase Shift",
+    issuer: "BMSCE Phase Shift",
     date: "Nov, 2022",
     description: "Hands-on experience with big data ingestion techniques and tools.",
     image: "/placeholder.svg?height=100&width=100",
