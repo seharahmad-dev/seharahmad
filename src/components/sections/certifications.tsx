@@ -7,6 +7,22 @@ import { Award } from "lucide-react"
 const certifications = [
   {
     id: 1,
+    title: "Elastic Google Cloud Infrastructure: Scaling and Automation",
+    issuer: "Google Cloud Skills Boost",
+    date: "May, 2025",
+    description: "How to scale and automate Google Cloud infrastructure using Elastic services.",
+    image: "/placeholder.svg?height=100&width=100",
+  },
+  {
+    id: 2,
+    title: "Getting started with Google Kubernetes Engine",
+    issuer: "Google Cloud Skills Boost",
+    date: "May, 2025",
+    description: "Fundamentals of Google Kubernetes Engine, including deployment and management of containerized applications.",
+    image: "/placeholder.svg?height=100&width=100",
+  },
+  {
+    id: 3,
     title: "Advanced Selenium Training",
     issuer: "Infosys Springboard",
     date: "Dec, 2024",
@@ -14,7 +30,7 @@ const certifications = [
     image: "/placeholder.svg?height=100&width=100",
   },
   {
-    id: 2,
+    id: 4,
     title: "The Complete 2024 Web Development Bootcamp",
     issuer: "Udemy",
     date: "Sept, 2024",
@@ -22,7 +38,7 @@ const certifications = [
     image: "/placeholder.svg?height=100&width=100",
   },
   {
-    id: 3,
+    id: 5,
     title: "Data Structures in C++",
     issuer: "Coding Ninjas",
     date: "Jan, 2024",
@@ -30,7 +46,7 @@ const certifications = [
     image: "/placeholder.svg?height=100&width=100",
   },
   {
-    id: 4,
+    id: 6,
     title: "Big Data Ingestion",
     issuer: "BMSCE Phase Shift",
     date: "Nov, 2022",
